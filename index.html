@@ -27,68 +27,112 @@
           <h1>Book An Appointment Online!</h1>
           <p>We have the best specialists in your region. Quality, guarantee and professionalism are our slogan!</p>
 
-          <div class="col-one d-lg-flex">
-            <div class="col-lg-6 mb-3 me-lg-3">
-              <label for="exampleFormControlInput1" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" />
+          <form name="appointment-form">
+            <div class="col-one d-lg-flex">
+              <div class="col-lg-6 mb-3 me-lg-3">
+                <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                <input name="name" type="text" class="form-control" id="exampleFormControlInput1" required />
+              </div>
+
+              <div class="col-lg-6 mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Appliance Type</label>
+                <select name="type" class="form-select" aria-label="Default select example" required>
+                  <option value="appliance type">Choose appliance type</option>
+                  <option value="ice maker">Ice maker</option>
+                  <option value="air conditioner">Air conditioner</option>
+                  <option value="clothes dryer">Clothes dryer</option>
+                  <option value="water heater">Water heater</option>
+                </select>
+              </div>
             </div>
 
-            <div class="col-lg-6 mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Appliance Type</label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Choose appliance type</option>
-                <option value="ice maker">Ice maker</option>
-                <option value="air conditioner">Air conditioner</option>
-                <option value="clothes dryer">Clothes dryer</option>
-                <option value="water heater">Water heater</option>
-              </select>
-            </div>
-          </div>
+            <div class="col-two d-lg-flex">
+              <div class="col-lg-6 mb-3 me-lg-3">
+                <label for="exampleFormControlInput1" class="form-label">Appointment Date</label>
+                <input name="date" type="date" class="form-control" id="exampleFormControlInput1" required />
+              </div>
 
-          <div class="col-two d-lg-flex">
-            <div class="col-lg-6 mb-3 me-lg-3">
-              <label for="exampleFormControlInput1" class="form-label">Appointment Date</label>
-              <input type="date" class="form-control" id="exampleFormControlInput1" />
+              <div class="col-lg-6 mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Preferred Time</label>
+                <input name="time" type="time" class="form-control" id="exampleFormControlInput1" required />
+              </div>
             </div>
 
-            <div class="col-lg-6 mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Preferred Time</label>
-              <input type="time" class="form-control" id="exampleFormControlInput1" />
+            <div class="col-three d-lg-flex">
+              <div class="col-lg-6 mb-3 me-lg-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" required />
+              </div>
+
+              <div class="col-lg-6 mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input name="phone" type="number" class="form-control" id="exampleFormControlInput1" required />
+              </div>
             </div>
-          </div>
 
-          <div class="col-three d-lg-flex">
-            <div class="col-lg-6 mb-3 me-lg-3">
-              <label for="exampleFormControlInput1" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" />
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+              <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Please, describe your problem" required></textarea>
             </div>
 
-            <div class="col-lg-6 mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-              <input type="number" class="form-control" id="exampleFormControlInput1" />
+            <p class="privacy-policy mb-5">By clicking Submit, you agree to our updated Privacy Policy terms and conditions</p>
+
+            <div class="alert alert-success alert-dismissible fade show mb-3 d-none" role="alert">
+              <strong>Thank you!</strong> Your information has been submitted. <a href="https://docs.google.com/spreadsheets/d/1vJoF0aPowsS8WtXcZkEhUv9Nqi8z7vA1QB9CmecUyQM/edit#gid=0" target="_blank">View the google sheet</a>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-          </div>
 
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Please, describe your problem"></textarea>
-          </div>
+            <button class="submit" type="submit">
+              <span>Submit</span>
+              <div class="message">
+                <span>
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+              </div>
+            </button>
 
-          <p class="privacy-policy mb-5">By clicking Submit, you agree to our updated Privacy Policy terms and conditions</p>
-
-          <div class="submit">
-            <a href="#">Submit</a>
-            <div class="message">
-              <a href="#">
-                <i class="bi bi-envelope-fill"></i>
-              </a>
-            </div>
-          </div>
+            <button class="btn btn-primary loading rounded-pill py-2 d-none" type="button" disabled>
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </form>
         </div>
       </div>
     </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbw_V4-fiPaRLgtkEfzIwcr5NZm-oMHLEidcWyTBM-F-q2wR2QAhifSl-zB_kW2NPHlc/exec";
+      const form = document.forms["appointment-form"];
+      const btnSubmit = document.querySelector(".submit");
+      const btnLoading = document.querySelector(".loading");
+      const myAlert = document.querySelector(".alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // tampilkan tombol loading, hilangkan tombol submit
+        btnSubmit.classList.toggle("d-none");
+        btnLoading.classList.toggle("d-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol submit, hilangkan tombol loading
+            btnSubmit.classList.toggle("d-none");
+            btnLoading.classList.toggle("d-none");
+
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+
+            // kosongkan isi form
+            form.reset();
+
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
