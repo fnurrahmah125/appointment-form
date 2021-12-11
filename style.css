@@ -21,7 +21,8 @@ h1 {
 
 .row .col-left {
   height: 200px;
-  background: url(img/background.png);
+  background: url(img/background-1.jpg);
+  background-size: cover;
 }
 
 @media (min-width: 992px) {
